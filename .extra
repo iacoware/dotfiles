@@ -1,0 +1,5 @@
+if test $(which git); then
+  echo "config git"
+  git config --global user.email "info@massimoiacolare.it"
+  git config --global user.name "Massimo Iacolare"
+fi
