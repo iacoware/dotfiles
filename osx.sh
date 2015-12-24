@@ -194,6 +194,9 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
+# Allow usage of function keys without pressing fn
+defaults write -g com.apple.keyboard.fnState -bool true
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################

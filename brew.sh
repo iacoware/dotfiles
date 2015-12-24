@@ -34,6 +34,7 @@ brew install findutils
 
 brew install tree
 brew install z
+brew install nvm
 
 ####################################################
 echo "installing cask apps"
@@ -43,32 +44,26 @@ brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
 # Core casks
-#brew cask install --appdir="/Applications" alfred
+brew cask install --appdir="/Applications" alfred
 #brew cask install --appdir="~/Applications" iterm2
 #brew cask install --appdir="~/Applications" java
-#brew cask install --appdir="~/Applications" xquartz
 
 # Development tool casks
 brew cask install --appdir="/Applications" sublime-text3
 #brew cask install --appdir="/Applications" atom
-#brew cask install --appdir="/Applications" virtualbox
-#brew cask install --appdir="/Applications" vagrant
+brew cask install --appdir="/Applications" virtualbox
+brew cask install --appdir="/Applications" vagrant
 #brew cask install --appdir="/Applications" heroku-toolbelt
-#brew cask install --appdir="/Applications" macdown
 
 # Misc casks
 brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" firefox
 brew cask install --appdir="/Applications" lastpass
-#brew cask install --appdir="/Applications" skype
-#brew cask install --appdir="/Applications" slack
-#brew cask install --appdir="/Applications" dropbox
+brew cask install --appdir="/Applications" skype
+brew cask install --appdir="/Applications" slack
+brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" vlc
-#brew cask install --appdir="/Applications" gimp
-#brew cask install --appdir="/Applications" inkscape
 
-# Link cask apps to Alfred
-#brew cask alfred link
 
 # Install Docker, which requires virtualbox
 #brew install docker
