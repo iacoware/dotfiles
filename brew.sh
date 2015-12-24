@@ -34,7 +34,6 @@ brew install findutils
 
 brew install tree
 brew install z
-brew install nvm
 
 ####################################################
 echo "installing cask apps"
