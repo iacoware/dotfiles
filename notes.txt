@@ -1,0 +1,8 @@
+Other things to install/rember that I've not automated:
+
+- AX88179 drivers (USB3 -> GB ethernet adapter)
+http://www.asix.com.tw/download.php
+
+- Tunnelblick VPN client (cask installation doesn't work as expected)
+
+- Tool to handle window (something like BetterTouchTool)
