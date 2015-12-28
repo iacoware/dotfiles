@@ -47,6 +47,12 @@ brew cask install --appdir="/Applications" alfred
 #brew cask install --appdir="~/Applications" iterm2
 #brew cask install --appdir="~/Applications" java
 
+#didn't work so well. Maybe I should remove appdir params
+#because for security reasons it must be first installed
+#to ~/Applicaitons and then manually moved to /Applicaitons
+#Check brew info tunnelblick for details
+#brew cask install tunnelblick --appdir="/Applications" --didn
+
 # Development tool casks
 brew cask install --appdir="/Applications" sublime-text3
 #brew cask install --appdir="/Applications" atom
