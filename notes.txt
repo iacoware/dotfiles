@@ -5,4 +5,5 @@ http://www.asix.com.tw/download.php
 
 - Tunnelblick VPN client (cask installation doesn't work as expected)
 
-- Tool to handle window (something like BetterTouchTool)
+- Window manager (drag to snap, keyboard shortcuts, increase/decrease size)
+(Flexiglass/Magnet/ShiftIt/phoenix)
