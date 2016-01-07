@@ -13,8 +13,13 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# Setup z
-. `brew --prefix`/etc/profile.d/z.sh
+# Setup nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+. `brew --prefix`/etc/profile.d/z.sh 	#setup z
+eval "$(direnv hook bash)"				#setup direnv
+eval $(docker-machine env docker-vm)	#setup docker-machine vm
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;

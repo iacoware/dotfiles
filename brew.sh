@@ -34,6 +34,8 @@ brew install findutils
 
 brew install tree
 brew install z
+brew install direnv
+brew install nmap
 
 ####################################################
 echo "installing cask apps"
@@ -69,10 +71,8 @@ brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" vlc
 
-
 # Install Docker, which requires virtualbox
-#brew install docker
-#brew install boot2docker
+brew install docker-machine docker docker-compose
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package

@@ -1,9 +1,16 @@
 Other things to install/rember that I've not automated:
 
+- XCode installation is required (from AppStore) for nodejs native modules (node-gyp)
+
 - AX88179 drivers (USB3 -> GB ethernet adapter)
 http://www.asix.com.tw/download.php
 
 - Tunnelblick VPN client (cask installation doesn't work as expected)
 
-- Window manager (drag to snap, keyboard shortcuts, increase/decrease size)
+- Window manager (drag to snap, keyboard shortcuts, increase/decrease size, zoom-maximize)
 (Flexiglass/Magnet/ShiftIt/phoenix)
+
+- Common shortcuts (That I always forgot...)
+	CMD + SHIFT + 3 = Screenshot entire desktop
+	CMD + SHIFT + 4 = Select part of the monitor
+
