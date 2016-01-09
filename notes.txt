@@ -14,3 +14,8 @@ http://www.asix.com.tw/download.php
 	CMD + SHIFT + 3 = Screenshot entire desktop
 	CMD + SHIFT + 4 = Select part of the monitor
 
+- Sublime Text 3
+	* Configure linters:
+		http://info.meteor.com/blog/set-up-sublime-text-for-meteor-es6-es2015-and-jsx-syntax-and-linting
+
+

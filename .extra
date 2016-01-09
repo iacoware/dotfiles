@@ -1,5 +1,18 @@
-if test $(which git); then
-  echo "config git"
-  git config --global user.email "info@massimoiacolare.it"
-  git config --global user.name "Massimo Iacolare"
-fi
+############## Misc
+. `brew --prefix`/etc/profile.d/z.sh	#setup z
+eval "$(direnv hook bash)"				#setup direnv
+eval $(docker-machine env docker-vm)	#setup docker-machine vm
+
+
+############## NodeJS env
+
+# Setup nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Put .node_modules/bin in path. Less need to rely on global modules
+export PATH="$PATH:./node_modules/.bin";
+
+alias nr="npm run"
+alias npmr="npm run"
+
