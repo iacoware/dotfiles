@@ -10,12 +10,16 @@ http://www.asix.com.tw/download.php
 - Window manager (drag to snap, keyboard shortcuts, increase/decrease size, zoom-maximize)
 (Flexiglass/Magnet/ShiftIt/phoenix)
 
-- Common shortcuts (That I always forgot...)
+- Common shortcuts (That I always forgot about...)
 	CMD + SHIFT + 3 = Screenshot entire desktop
 	CMD + SHIFT + 4 = Select part of the monitor
 
 - Sublime Text 3
-	* Configure linters:
+	* Configure ESLint:
+		#one time
+		link .eslintrc .eslintignore into /projects folder
+		(mkdir ~/projects && cd ~/projects && ln -s ~/dotfiles/support/.eslintrc)
+
+		#every project
+		npm i eslint eslist-plugin-react babel-eslint eslint-config-defaults --save-dev
 		http://info.meteor.com/blog/set-up-sublime-text-for-meteor-es6-es2015-and-jsx-syntax-and-linting
-
-

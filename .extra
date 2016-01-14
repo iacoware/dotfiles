@@ -15,4 +15,5 @@ export PATH="$PATH:./node_modules/.bin";
 
 alias nr="npm run"
 alias npmr="npm run"
+alias npm-eslint="npm i eslint eslint-plugin-react babel-eslint eslint-config-defaults --save-dev"
 
