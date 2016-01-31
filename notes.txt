@@ -1,5 +1,7 @@
 Other things to install/rember that I've not automated:
 
+- Paragon NTFS driver to write on NTFS volumes
+
 - XCode installation is required (from AppStore) for nodejs native modules (node-gyp)
 
 - AX88179 drivers (USB3 -> GB ethernet adapter)
