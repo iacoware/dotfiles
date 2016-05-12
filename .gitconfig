@@ -1,16 +1,22 @@
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	#l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --graph -n 20
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
 	# View the current working tree status using the short format
 	s = status -s
+
+	# View just merge conflicts
+	sc = diff --name-only --diff-filter=U
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
 	# Diff on the same line, ignore whitespaces, remove file prefix
-	dd = git diff --word-diff --no-prefix -w
+	dd = diff --word-diff --no-prefix -w
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
@@ -22,7 +28,7 @@
 	c = clone --recursive
 
 	# Commit all changes
-	ca = !git add -A && git commit -av
+	ca = !git add -A && git commit -avm
 
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
@@ -121,7 +127,7 @@
 
 [color "diff"]
 
-	meta = yellow bold
+	meta = cyan bold reverse
 	frag = magenta bold # line info
 	old = red # deletions
 	new = green # additions

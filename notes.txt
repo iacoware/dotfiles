@@ -10,7 +10,7 @@ http://www.asix.com.tw/download.php
 - Tunnelblick VPN client (cask installation doesn't work as expected)
 
 - Window manager (drag to snap, keyboard shortcuts, increase/decrease size, zoom-maximize)
-(Flexiglass/Magnet/ShiftIt/phoenix)
+(Flexiglass/ShiftIt/phoenix)
 
 - Common shortcuts (That I always forgot about...)
 	CMD + SHIFT + 3 = Screenshot entire desktop
