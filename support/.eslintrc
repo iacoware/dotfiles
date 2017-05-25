@@ -14,9 +14,9 @@
 
     "rules": {
         "indent": [2, "tab"],
-        "quotes": [2, "single", "avoid-escape"],
+        //"quotes": [2, "single", "avoid-escape"],
         "linebreak-style": [2, "unix"],
-        "semi": [2, "always"],
+        //"semi": [2, "always"],
         "block-scoped-var": 2,
         "no-var": 0,
         "react/prefer-es6-class": 0,

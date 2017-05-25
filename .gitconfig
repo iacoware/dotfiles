@@ -30,6 +30,9 @@
 	# Commit all changes
 	ca = !git add -A && git commit -avm
 
+	# Commit all changes
+	camend = commit --amend --no-edit
+
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
@@ -71,7 +74,7 @@
 	contributors = shortlog --summary --numbered
 
 	# Pull rebase
-	pr = pull --rebase
+	pl = pull --rebase
 
 	# Merge GitHub pull request on top of the current branch or,
 	# if a branch name is specified, on top of the specified branch
