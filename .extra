@@ -1,7 +1,12 @@
 ############## Misc
-. `brew --prefix`/etc/profile.d/z.sh	#setup z
-eval "$(direnv hook bash)"				#setup direnv
-
+if [ "$(uname)" == "Darwin" ]; then
+    echo "currently on mac"
+    . `brew --prefix`/etc/profile.d/z.sh	#setup z
+    eval "$(direnv hook bash)"				#setup direnv
+else
+    echo "currently on linux"
+    . ~/z.sh        
+fi
 
 ############## NodeJS env
 
@@ -11,8 +16,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # Put .node_modules/bin in path. Less need to rely on global modules
 export PATH="$PATH:./node_modules/.bin";
-
-alias nr="npm run"
-alias npmr="npm run"
-alias npm-eslint="npm i eslint eslint-plugin-react babel-eslint eslint-config-defaults --save-dev"
-
