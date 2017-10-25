@@ -39,8 +39,13 @@ function gitio() {
 	curl -i http://git.io/ -F "url=${2}" -F "code=${1}";
 }
 
+# Queries giignre.io api to retrieve a common set of ignored files for an IDE, OS, etc
 function gitignore() {
 	curl -L gitignore.io/api/${1}
+}
+
+function ccat() {
+	highlight ${1} -O ansi #--syntax=bash to set a syntax for files without an extension 
 }
 
 # Start an HTTP server from a directory, optionally specifying the port

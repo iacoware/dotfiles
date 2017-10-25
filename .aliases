@@ -40,6 +40,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# Keep colors, enable scrolling
+alias less='less -FRX'
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
