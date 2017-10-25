@@ -2,8 +2,10 @@
 export PATH="$HOME/bin:$PATH";
 
 ## Use gnu tools instead (coreutils)
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
+if [ "$(uname)" == "Darwin" ]; then
+	export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+	export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
+fi
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
