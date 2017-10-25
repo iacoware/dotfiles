@@ -36,6 +36,8 @@ brew install tree
 brew install z
 brew install direnv
 brew install nmap
+brew install highlight  # who doesn't like a colorized cat?
+brew install ack        # faster, easier than grep
 
 ####################################################
 echo "installing cask apps"
