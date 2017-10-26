@@ -22,14 +22,25 @@
 	# Diff on the same line, ignore whitespaces, remove file prefix
 	dd = diff --word-diff --no-prefix -w
 
+	# unstage staged files (or pass a filename)
+	unstage = reset HEAD --
+
+	# undo last commit(s) and keep changes, with files unstaged
+    undo = reset HEAD^ --mixed
+	
 	# Commit all changes
 	ca = !git add -A && git commit -avm
 
 	# Commit all changes
+	amend = commit --amend
 	camend = commit --amend --no-edit
 
 	# Switch to a branch, creating it if necessary
 	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# global git config
+	ec = config --global -e		# edit
+	lc = config --global -l		# list
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
@@ -39,21 +50,14 @@
 	# List aliases
 	aliases = config --get-regexp alias
 
-	# Find commits by source code
-	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
-
-	# Find commits by commit message
-	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-
-	# Remove branches that have already been merged with master
-	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
 	# Pull rebase
 	pl = pull --rebase
+
+	# show a tree with all branches
+    tree = !git log --graph --decorate --all --oneline
 
 [apply]
 
