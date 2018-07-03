@@ -10,6 +10,9 @@
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
     ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
+	# show a tree with all branches
+    hist = !git log --graph --decorate --all --oneline --color
+
 	# View the current working tree status using the short format
 	s = status -s
 
@@ -36,7 +39,7 @@
 	camend = commit --amend --no-edit
 
 	# Switch to a branch, creating it if necessary
-	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	co = checkout
 
 	# global git config
 	ec = config --global -e		# edit
@@ -56,16 +59,11 @@
 	# Pull rebase
 	pl = pull --rebase
 
-	# show a tree with all branches
-    tree = !git log --graph --decorate --all --oneline
-
 [apply]
-
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
 [core]
-
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
@@ -84,32 +82,27 @@
 	precomposeunicode = false
 
 [color]
-
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
 
 [color "branch"]
-
 	current = yellow reverse
 	local = yellow
 	remote = green
 
 [color "diff"]
-
 	meta = cyan bold reverse
 	frag = magenta bold # line info
 	old = red # deletions
 	new = green # additions
 
 [color "status"]
-
 	added = yellow
 	changed = green
 	untracked = cyan
 
 [diff]
-
 	# Detect copies as well as renames
 	renames = copies
 
@@ -118,12 +111,10 @@
 	textconv = hexdump -v -C
 
 [merge]
-
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
 [push]
-
 	default = simple
 	
 	# Make `git push` push relevant annotated tags when pushing branches out.
@@ -131,6 +122,7 @@
 
 [rerere]
 	enabled = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
