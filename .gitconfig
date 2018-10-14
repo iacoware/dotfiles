@@ -31,6 +31,9 @@
 	# undo last commit(s) and keep changes, with files unstaged
     undo = reset HEAD^ --mixed
 	
+	# Add all changes
+	aa = add -A
+
 	# Commit all changes
 	ca = !git add -A && git commit -avm
 
