@@ -87,3 +87,8 @@ alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+#suspend sleep
+alias suspendsleep="sudo systemsetup -setcomputersleep Off"
+alias resumesleep="sudo systemsetup -setcomputersleep 2"
+alias setsleep="sudo systemsetup -setcomputersleep"
