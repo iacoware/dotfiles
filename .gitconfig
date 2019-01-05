@@ -19,9 +19,6 @@
 	# View just merge conflicts
 	sc = diff --name-only --diff-filter=U
 
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
 	# Diff on the same line, ignore whitespaces, remove file prefix
 	dd = diff --word-diff --no-prefix -w
 
@@ -29,7 +26,7 @@
 	unstage = reset HEAD --
 
 	# undo last commit(s) and keep changes, with files unstaged
-    undo = reset HEAD^ --mixed
+    uncommit = reset HEAD^ --mixed
 	
 	# Add all changes
 	aa = add -A
@@ -64,6 +61,7 @@
 
 	# Pull rebase
 	pl = pull --rebase
+	pr = pull --rebase
 
 [apply]
 	# Detect whitespace errors when applying a patch
