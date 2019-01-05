@@ -1,0 +1,2 @@
+# Put .node_modules/bin in path. Less need to rely on global modules
+export PATH="$PATH:./node_modules/.bin";

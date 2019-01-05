@@ -13,6 +13,3 @@ fi
 # Setup nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-# Put .node_modules/bin in path. Less need to rely on global modules
-export PATH="$PATH:./node_modules/.bin";
