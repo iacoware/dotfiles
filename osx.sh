@@ -9,7 +9,7 @@ osascript -e 'tell application "System Preferences" to quit'
 # Ask for the administrator password upfront
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
@@ -23,7 +23,7 @@ sudo scutil --set LocalHostName "iacpro"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "iacpro"
 
 # Set standby delay to 24 hours (default is 1 hour)
-#sudo pmset -a standbydelay 86400
+sudo pmset -a standbydelay 86400
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -137,9 +137,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # SSD-specific tweaks                                                         #
 ###############################################################################
 
-# Disable local Time Machine snapshots
-sudo tmutil disablelocal
-
 # Disable hibernation (speeds up entering sleep mode)
 #sudo pmset -a hibernatemode 0
 
@@ -149,9 +146,6 @@ sudo tmutil disablelocal
 #sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 #sudo chflags uchg /private/var/vm/sleepimage
-
-# Disable the sudden motion sensor as it’s not useful for SSDs
-#sudo pmset -a sms 0
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -172,7 +166,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
-#defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -209,7 +203,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 # Allow usage of function keys without pressing fn
-defaults write -g com.apple.keyboard.fnState -bool true
+#defaults write -g com.apple.keyboard.fnState -bool true
 
 ###############################################################################
 # Screen                                                                      #
@@ -286,7 +280,7 @@ defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 # Remove the spring loading delay for directories
 defaults write NSGlobalDomain com.apple.springing.delay -float 0
 
-# Avoid creating .DS_Store files on network volumes
+# Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
@@ -394,7 +388,7 @@ defaults write com.apple.dock expose-group-by-app -bool false
 defaults write com.apple.dashboard mcx-disabled -bool true
 
 # Don’t show Dashboard as a Space
-#defaults write com.apple.dock dashboard-in-overlay -bool true
+defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
@@ -409,6 +403,9 @@ defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+
+# Don’t show recent applications in Dock
+#defaults write com.apple.dock show-recents -bool false
 
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
 #defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
@@ -471,13 +468,13 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 # Hide Safari’s bookmarks bar by default
-#defaults write com.apple.Safari ShowFavoritesBar -bool false
+defaults write com.apple.Safari ShowFavoritesBar -bool false
 
 # Hide Safari’s sidebar in Top Sites
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
 # Disable Safari’s thumbnail cache for History and Top Sites
-#defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
+defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 # Enable Safari’s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
@@ -486,7 +483,7 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 # Remove useless icons from Safari’s bookmarks bar
-#defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
@@ -495,6 +492,45 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Enable continuous spellchecking
+defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
+# Disable auto-correct
+defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
+
+# Disable AutoFill
+defaults write com.apple.Safari AutoFillFromAddressBook -bool false
+defaults write com.apple.Safari AutoFillPasswords -bool false
+defaults write com.apple.Safari AutoFillCreditCardData -bool false
+defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
+
+# Warn about fraudulent websites
+defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
+
+# Disable plug-ins
+defaults write com.apple.Safari WebKitPluginsEnabled -bool false
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled -bool false
+
+# Disable Java
+defaults write com.apple.Safari WebKitJavaEnabled -bool false
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false
+
+# Block pop-up windows
+defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
+
+# Disable auto-playing video
+#defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
+#defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
+#defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+#defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+
+# Enable “Do Not Track”
+defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+
+# Update extensions automatically
+defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
+
 
 ###############################################################################
 # Spotlight                                                                   #
@@ -507,7 +543,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 # Change indexing order and disable some search results
-# Yosemite-specific search results (remove them if you are using OS X 10.9 or older):
+# Yosemite-specific search results (remove them if you are using macOS 10.9 or older):
 # 	MENU_DEFINITION
 # 	MENU_CONVERSION
 # 	MENU_EXPRESSION
@@ -602,6 +638,13 @@ EOD
 # i.e. hover over a window and start typing in it without clicking first
 #defaults write com.apple.terminal FocusFollowsMouse -bool true
 #defaults write org.x.X11 wm_ffm -bool true
+
+# Enable Secure Keyboard Entry in Terminal.app
+# See: https://security.stackexchange.com/a/47786/8918
+defaults write com.apple.terminal SecureKeyboardEntry -bool true
+
+# Disable the annoying line marks
+defaults write com.apple.Terminal ShowLineMarks -int 0
 
 # Install the Solarized Dark theme for iTerm
 open "${HOME}/init/Solarized Dark.itermcolors"
@@ -714,10 +757,6 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
 
-# Allow installing user scripts via GitHub Gist or Userscripts.org
-defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
-defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
-
 # Disable the all too sensitive backswipe on trackpads
 #defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 #defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
@@ -734,24 +773,33 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
-###############################################################################
-# SizeUp.app                                                                  #
-###############################################################################
-
-# Start SizeUp at login
-#defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
-
-# Don’t show the preferences window on next start
-#defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-	"Opera" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-	"Transmission" "Tweetbot" "Twitter" "iCal"; do
+for app in "Activity Monitor" \
+	"Address Book" \
+	"Calendar" \
+	"cfprefsd" \
+	"Contacts" \
+	"Dock" \
+	"Finder" \
+	"Google Chrome Canary" \
+	"Google Chrome" \
+	"Mail" \
+	"Messages" \
+	"Opera" \
+	"Photos" \
+	"Safari" \
+	"SizeUp" \
+	"Spectacle" \
+	"SystemUIServer" \
+	"Terminal" \
+	"Transmission" \
+	"Tweetbot" \
+	"Twitter" \
+	"iCal"; do
 	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

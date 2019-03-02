@@ -6,5 +6,6 @@ set -U fish_user_paths $fish_user_paths ./node_modules/.bin
 
 abbr --add p cd ~/projects
 abbr --add k cd ~/projects/katas
+abbr --add less less -FRX
 
 nvm use default

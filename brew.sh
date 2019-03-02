@@ -15,69 +15,78 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+# Install command-line tools using Homebrew.
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
-####################################################
-echo "installing brew formulaes"
+# Save Homebrew’s installed location.
+BREW_PREFIX=$(brew --prefix)
 
-# Install GNU core utilities (those that come with OS X are outdated).
+# Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
+# Install some other useful utilities like `sponge`.
+brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew install gnu-sed --with-default-names
+# Install Bash 4.
+brew install bash
+brew install bash-completion2
+
+# Switch to using brew-installed bash as default shell
+if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+  chsh -s "${BREW_PREFIX}/bin/bash";
+fi;
 
 brew install tree
 brew install z
-brew install direnv
-brew install nmap
-brew install highlight  # who doesn't like a colorized cat?
-brew install ack        # faster, easier than grep
+brew install fzf
+brew install bat
+brew install fd
+brew install httpie
+brew install icdiff
+brew install p7zip
+brew install ncdu
+brew install git
+brew install git-lfs
+brew install ssh-copy-id
 
 ####################################################
 echo "installing cask apps"
 
-# Install Cask
-brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
 # Core casks
-brew cask install --appdir="/Applications" alfred
-#brew cask install --appdir="~/Applications" iterm2
-#brew cask install --appdir="~/Applications" java
-
-#didn't work so well. Maybe I should remove appdir params
-#because for security reasons it must be first installed
-#to ~/Applicaitons and then manually moved to /Applicaitons
-#Check brew info tunnelblick for details
-#brew cask install tunnelblick --appdir="/Applications" --didn
+brew cask install alfred
+brew cask install iterm2
 
 # Development tool casks
-brew cask install --appdir="/Applications" sublime-text3
-#brew cask install --appdir="/Applications" atom
-brew cask install --appdir="/Applications" virtualbox
-brew cask install --appdir="/Applications" vagrant
-#brew cask install --appdir="/Applications" heroku-toolbelt
+brew cask install sublime-text
+brew cask install sublime-merge
+#brew cask install visual-studio-code
+
+#brew cask install virtualbox
+#brew cask install vagrant
+#brew cask install docker
 
 # Misc casks
-brew cask install --appdir="/Applications" google-chrome
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" lastpass
-brew cask install --appdir="/Applications" skype
-brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" dropbox
-brew cask install --appdir="/Applications" vlc
-
-# Install Docker, which requires virtualbox
-brew install docker-machine docker docker-compose
+brew cask install google-chrome
+brew cask install firefox
+#brew cask install lastpass
+brew cask install dropbox
+brew cask install vlc
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo
 
 ######################################################
 echo "Install cask fonts"
