@@ -2,7 +2,6 @@
 if [ "$(uname)" == "Darwin" ]; then
     echo "currently on mac"
     . `brew --prefix`/etc/profile.d/z.sh	#setup z
-    eval "$(direnv hook bash)"				#setup direnv
 else
     echo "currently on linux"
     . ~/z.sh        
