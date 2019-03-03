@@ -68,6 +68,7 @@ brew tap caskroom/versions
 # Core casks
 brew cask install alfred
 brew cask install iterm2
+brew cask install fantastical
 
 # Development tool casks
 brew cask install sublime-text
@@ -84,6 +85,7 @@ brew cask install firefox
 #brew cask install lastpass
 brew cask install dropbox
 brew cask install vlc
+brew cask install franz
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo
