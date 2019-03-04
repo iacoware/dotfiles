@@ -37,7 +37,8 @@ brew install moreutils
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
-# Install Bash 4.
+
+# Install latest Bash.
 brew install bash
 brew install bash-completion2
 
@@ -53,7 +54,7 @@ brew install fzf
 brew install bat
 brew install fd
 brew install httpie
-brew install icdiff
+brew install icdiff #remeber to set it up with git
 brew install p7zip
 brew install ncdu
 brew install git
@@ -68,7 +69,6 @@ brew tap caskroom/versions
 # Core casks
 brew cask install alfred
 brew cask install iterm2
-brew cask install fantastical
 
 # Development tool casks
 brew cask install sublime-text
@@ -86,6 +86,7 @@ brew cask install firefox
 brew cask install dropbox
 brew cask install vlc
 brew cask install franz
+brew cask install fantastical
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo
