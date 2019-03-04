@@ -44,10 +44,6 @@ function gitignore() {
 	curl -L gitignore.io/api/${1}
 }
 
-function ccat() {
-	highlight ${1} -O ansi #--syntax=bash to set a syntax for files without an extension 
-}
-
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
 	local port="${1:-8000}";
