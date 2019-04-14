@@ -87,6 +87,7 @@ brew cask install dropbox
 brew cask install vlc
 brew cask install franz
 brew cask install fantastical
+brew cask install jetbrains-toolbox
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo
