@@ -42,6 +42,7 @@ alias less='less -FRX'
 alias sudo='sudo '
 
 alias showpass='lpass show --password'
+alias copypass='lpass show --password -c'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
