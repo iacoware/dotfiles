@@ -3,7 +3,7 @@
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 files=(
-	init.lua
+	init.lua win-mgr.lua
 )
 
 for file in ${files[@]}; do
