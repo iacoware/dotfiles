@@ -3,6 +3,7 @@ local hyperMove = {"ctrl", "alt"}
 local hyperResize = {"ctrl", "alt", "shift"}
 local moveIncrement = 30
 local sizeIncrement = 30
+local prevFrame = {}
 
 -- Move to next monitor
 hs.hotkey.bind(hyperMove, "M", function()
@@ -13,92 +14,93 @@ hs.hotkey.bind(hyperMove, "M", function()
     hs.alert.show("Move to next screen")
 end)
 
--- Move windows ← ↑ ↓ → + grow, shrink
+-- Move windows ← ↑ ↓ →
 hs.hotkey.bind(hyperMove, "Up", function()
-    adjustWindow(function(f)
-        f.y = f.y - moveIncrement
-    end)
+    moveWindow(0, -moveIncrement)
 end)
 
 
 hs.hotkey.bind(hyperMove, "Down", function()
-    adjustWindow(function(f)
-        f.y = f.y + moveIncrement
-    end)
+    moveWindow(0, moveIncrement)
 end)
 
 hs.hotkey.bind(hyperMove, "Left", function()
-    adjustWindow(function(f)
-        f.x = f.x - moveIncrement
-    end)
+    moveWindow(-moveIncrement, 0)
 end)
 
 hs.hotkey.bind(hyperMove, "Right", function()
-    adjustWindow(function(f)
-        f.x = f.x + moveIncrement
-    end)
+    moveWindow(moveIncrement, 0)
 end)
 
+-- Resize windows ← ↑ ↓ →
 hs.hotkey.bind(hyperResize, "Right", function()
-    adjustWindow(function(f)
-        f.w = f.w + sizeIncrement
-    end)
+    resizeWindow(sizeIncrement, 0)
 end)
 
 hs.hotkey.bind(hyperResize, "Left", function()
-    adjustWindow(function(f)
-        f.w = f.w - sizeIncrement
-    end)
+    resizeWindow(-sizeIncrement, 0)
 end)
 
 hs.hotkey.bind(hyperResize, "Down", function()
-    adjustWindow(function(f)
-        f.h = f.h + sizeIncrement
-    end)
+    resizeWindow(0, sizeIncrement)
 end)
 
 hs.hotkey.bind(hyperResize, "Up", function()
-    adjustWindow(function(f)
-        f.h = f.h - sizeIncrement
-    end)
+    resizeWindow(0, -sizeIncrement)
 end)
 
 --Snap windows left & right, maximize, center
 hs.hotkey.bind(hyperSnap, "Left", function()
-    adjustWindow(function(f, s)
-        f.x = s.x
-        f.y = s.y
-        f.w = s.w / 2
-        f.h = s.h
-    end)
+    snapWindow(0, 0, 0.5, 1)
 end)
 
 hs.hotkey.bind(hyperSnap, "Right", function()
-    adjustWindow(function(f, s)
-        f.x = s.w / 2
-        f.y = s.y
-        f.w = s.w / 2
-        f.h = s.h
-    end)
+    snapWindow(0.5, 0, 0.5, 1)
 end)
 
 hs.hotkey.bind(hyperSnap, "C", function()
-    adjustWindow(function(f, s)
-        f.x = s.w * 0.25 / 2
-        f.y = s.h * 0.25 / 2
-        f.w = s.w * 0.75
-        f.h = s.h * 0.75
-    end)
+    snapWindow(0.25/2, 0.25/2, 0.75, 0.75)
 end)
 
 hs.hotkey.bind(hyperSnap, "F", function()
-    adjustWindow(function(f, s)
-        f.x = s.x
-        f.y = s.y
-        f.w = s.w
-        f.h = s.h
+    snapWindow(0, 0, 1, 1)
+end)
+
+-- Restore prev size and position
+hs.hotkey.bind(hyperMove, "-", function()
+    local prev = getPrevWin(hs.window.focusedWindow())
+
+    adjustWindow(function(f)
+        f.x = prev.x
+        f.y = prev.y
+        f.w = prev.w
+        f.h = prev.h
     end)
 end)
+
+-------------------------------------- Private functions
+function moveWindow(xInc, yInc)
+    adjustWindow(function(f)
+        f.x = f.x + xInc
+        f.y = f.y + yInc
+    end)
+end
+
+function resizeWindow(wInc, hInc)
+    adjustWindow(function(f)
+        f.w = f.w + wInc
+        f.h = f.h + hInc
+    end)
+end
+
+function snapWindow(xf, yf, wf, hf)
+    adjustWindow(function(f, s)
+        f.x = s.w * xf
+        f.y = s.h * yf
+        f.w = s.w * wf
+        f.h = s.h * hf
+    end)
+end
 
 function adjustWindow(adjustment)
     local win = hs.window.focusedWindow()
@@ -106,6 +108,20 @@ function adjustWindow(adjustment)
     local screen = win:screen()
     local screenFrame = screen:frame()
   
-    adjustment(winFrame, screenFrame)
+    setPrevWin(win)
+    adjustment(winFrame, screenFrame, win)
     win:setFrame(winFrame)
+end
+
+function setPrevWin(win)
+    local f = win:frame()
+    prevFrame = {id = win:id(), x = f.x, y = f.y, w = f.w, h = f.h}
+end
+
+function getPrevWin(win)
+    return copyFrame(prevFrame)
+end
+
+function copyFrame(f)
+    return {id = f.id, x = f.x, y = f.y, w = f.w, h = f.h}
 end
