@@ -36,16 +36,14 @@ hs.hotkey.bind(hyperSnap, "C",      snapCurried(0.25/2, 0.25/2, 0.75, 0.75))
 hs.hotkey.bind(hyperSnap, "F",      snapCurried(0, 0, 1, 1))
 
 -- Move to next monitor
-hs.hotkey.bind(hyperMove, "M", function()
+hs.hotkey.bind(hyperSnap, "M", function()
     local win = hs.window.focusedWindow()
-    local screen = win:screen()
-    local nextScreen = screen:next()
-    win:moveToScreen(nextScreen)
+    win:moveToScreen(win:screen():next())
     hs.alert.show("Move to next screen")
 end)
 
 -- Restore prev size and position
-hs.hotkey.bind(hyperMove, "-", function()
+hs.hotkey.bind(hyperSnap, "-", function()
     local prev = getPrevWin(hs.window.focusedWindow())
 
     adjustWindow(function(f)
