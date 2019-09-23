@@ -36,7 +36,7 @@ spoon.SpoonInstall:andUse("ColorPicker",
 
 spoon.SpoonInstall:andUse("TextClipboardHistory",
     {
-        --disable = true,
+        disable = true,
         config = {
             show_in_menubar = true,
         },
