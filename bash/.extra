@@ -14,5 +14,4 @@ fi
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Setup fnm
-export PATH=$HOME/.fnm:$PATH
 eval "`fnm env --multi`"
