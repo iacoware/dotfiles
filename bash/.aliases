@@ -84,3 +84,8 @@ alias reload="exec $SHELL -l"
 alias suspendsleep="sudo systemsetup -setcomputersleep Off"
 alias resumesleep="sudo systemsetup -setcomputersleep 2"
 alias setsleep="sudo systemsetup -setcomputersleep"
+
+# Docker aliases
+alias dk=docker
+alias dkc=docker-compose
+alias dkpsa="docker ps -a"

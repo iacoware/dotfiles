@@ -74,3 +74,10 @@ function digga() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function dkrm()	{ 
+	docker rm $(docker ps -q -f "status=exited") 
+}
+function dkrmi() { 
+	docker rmi $(docker images -q -f "dangling=true") 
+}
