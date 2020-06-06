@@ -56,48 +56,44 @@ end)
 
 -------------------------------------- Private functions
 function moveWindow(xInc, yInc)
-    adjustWindow(function(f)
-        f.x = f.x + xInc
-        f.y = f.y + yInc
+    adjustWindow(function(winFrame)
+        return {
+            x = winFrame.x + xInc,
+            y = winFrame.y + yInc,
+            w = winFrame.w,
+            h = winFrame.h
+        }
     end)
 end
 
 function resizeWindow(wInc, hInc)
-    adjustWindow(function(f)
-        f.w = f.w + wInc
-        f.h = f.h + hInc
+    adjustWindow(function(winFrame)
+        return {
+            x = winFrame.x,
+            y = winFrame.y,
+            w = winFrame.w + wInc,
+            h = winFrame.h + hInc
+        }
     end)
 end
 
 function snapWindow(xf, yf, wf, hf)
-    adjustWindow(function(f, s)
-        f.x = s.w * xf
-        f.y = s.h * yf
-        f.w = s.w * wf
-        f.h = s.h * hf
+    adjustWindow(function(winFrame, screenFrame, win, screen)
+        return screen:localToAbsolute({
+            x = screenFrame.w * xf,
+            y = screenFrame.h * yf,
+            w = screenFrame.w * wf,
+            h = screenFrame.h * hf
+        })
     end)
 end
 
-function adjustWindow(adjustment)
+function adjustWindow(adjustmentFn)
     local win = hs.window.focusedWindow()
     local winFrame = win:frame()
     local screen = win:screen()
     local screenFrame = screen:frame()
   
-    setPrevWin(win)
-    adjustment(winFrame, screenFrame, win)
-    win:setFrame(winFrame)
-end
-
-function setPrevWin(win)
-    local f = win:frame()
-    prevFrame = {id = win:id(), x = f.x, y = f.y, w = f.w, h = f.h}
-end
-
-function getPrevWin(win)
-    return copyFrame(prevFrame)
-end
-
-function copyFrame(f)
-    return {id = f.id, x = f.x, y = f.y, w = f.w, h = f.h}
+    local newFrame = adjustmentFn(winFrame, screenFrame, win, screen)
+    win:setFrame(newFrame)
 end
