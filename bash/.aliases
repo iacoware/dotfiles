@@ -89,3 +89,9 @@ alias setsleep="sudo systemsetup -setcomputersleep"
 alias dk=docker
 alias dkc=docker-compose
 alias dkpsa="docker ps -a"
+
+alias unzip="7z x"
+
+# Count lines of code
+alias sloc="sloc -e 'node_modules|\.git\b|\bbin\b|\bobj\b|\bdist\b|\.cache\b'"
+alias cloc="cloc --exclude-dir=node_modules,.git,.cache,dist,bin,obj,.vscode,.idea,.terraform,published,wwwroot,__mocks__,legacy-db,layouts-laura,examples --exclude-ext=tfstate --not-match-f='package-lock|deps\.json'"
