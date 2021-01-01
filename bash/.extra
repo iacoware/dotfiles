@@ -13,5 +13,8 @@ fi
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# Setup fnm
-eval "`fnm env --multi`"
+# hook fnm
+eval "`fnm env`"
+
+# hook direnv
+eval "$(direnv hook bash)"
