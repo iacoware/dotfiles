@@ -38,8 +38,8 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 
-# Install `wget` with IRI support.
-brew install wget --with-iri
+# Install `wget`
+brew install wget
 
 brew install tree
 brew install z
@@ -66,36 +66,36 @@ echo "installing cask apps"
 brew tap homebrew/cask-versions
 
 # Development tool casks
-brew cask install iterm2
-brew cask install sublime-text
-brew cask install sublime-merge
-brew cask install visual-studio-code
-brew cask install jetbrains-toolbox
-brew cask install docker
-brew cask install postman
-brew cask install dotnet-sdk
+brew install --cask iterm2
+brew install --cask sublime-text
+brew install --cask sublime-merge
+brew install --cask visual-studio-code
+brew install --cask jetbrains-toolbox
+brew install --cask docker
+brew install --cask postman
+brew install --cask dotnet-sdk
 
 # Browsers
-brew cask install google-chrome
-brew cask install firefox
-brew cask install opera
-brew cask install brave-browser
-brew cask install tor-browser
+brew install --cask google-chrome
+brew install --cask firefox
+brew install --cask opera
+brew install --cask brave-browser
+brew install --cask tor-browser
 
-# Misc casks
-brew cask install slack
-brew cask install notion
-brew cask install miro
-brew cask install dropbox
-brew cask install google-drive-file-stream
-brew cask install vlc
-brew cask install fantastical
-brew cask install rectangle
-brew cask install zoomus
-brew cask install pop
+# Miscs
+brew install --cask slack
+brew install --cask notion
+brew install --cask miro
+brew install --cask dropbox
+brew install --cask google-drive-file-stream
+brew install --cask vlc
+brew install --cask fantastical
+brew install --cask rectangle
+brew install --cask zoomus
+brew install --cask pop
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo
+brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo
 xattr -d -r com.apple.quarantine ~/Library/QuickLook #Remove quarantine attributes on Catalina and later
 
 ######################################################
