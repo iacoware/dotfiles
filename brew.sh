@@ -63,7 +63,7 @@ brew lastpass-cli
 ####################################################
 echo "installing cask apps"
 
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 
 # Development tool casks
 brew cask install iterm2
