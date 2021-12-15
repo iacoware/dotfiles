@@ -13,3 +13,4 @@ A collection of dotfiles that suits my needs. Stolen from:
 3. `brew.sh`
 4. `osx.sh`
 5. run the setup for bash, fish or zsh
+6. `/git/setup.sh`
