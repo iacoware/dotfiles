@@ -38,15 +38,8 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 
-# Install latest Bash.
-brew install bash
-brew install bash-completion2
-
-# Switch to using brew-installed bash as default shell
-if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-  chsh -s "${BREW_PREFIX}/bin/bash";
-fi;
+# Install `wget` with IRI support.
+brew install wget --with-iri
 
 brew install tree
 brew install z
@@ -60,42 +53,54 @@ brew install ncdu
 brew install git
 brew install git-lfs
 brew install ssh-copy-id
+brew install starship
+brew install fnm
+brew install awscli
+brew install direnv
+brew install cloc
+brew lastpass-cli
 
 ####################################################
 echo "installing cask apps"
 
 brew tap caskroom/versions
 
-# Core casks
-brew cask install alfred
-brew cask install iterm2
-
 # Development tool casks
+brew cask install iterm2
 brew cask install sublime-text
 brew cask install sublime-merge
-#brew cask install visual-studio-code
+brew cask install visual-studio-code
+brew cask install jetbrains-toolbox
+brew cask install docker
+brew cask install postman
+brew cask install dotnet-sdk
 
-#brew cask install virtualbox
-#brew cask install vagrant
-#brew cask install docker
-
-# Misc casks
+# Browsers
 brew cask install google-chrome
 brew cask install firefox
-#brew cask install lastpass
+brew cask install opera
+brew cask install brave-browser
+brew cask install tor-browser
+
+# Misc casks
+brew cask install slack
+brew cask install notion
+brew cask install miro
 brew cask install dropbox
+brew cask install google-drive-file-stream
 brew cask install vlc
-brew cask install franz
 brew cask install fantastical
-brew cask install jetbrains-toolbox
+brew cask install rectangle
+brew cask install zoomus
+brew cask install pop
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo
+xattr -d -r com.apple.quarantine ~/Library/QuickLook #Remove quarantine attributes on Catalina and later
 
 ######################################################
 echo "Install cask fonts"
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install font-bebas-neue
 
 brew cleanup
-brew cask cleanup --outdated
