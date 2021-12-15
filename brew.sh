@@ -58,7 +58,7 @@ brew install fnm
 brew install awscli
 brew install direnv
 brew install cloc
-brew lastpass-cli
+brew install lastpass-cli
 
 ####################################################
 echo "installing cask apps"
