@@ -104,6 +104,6 @@ brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json webpquickloo
 ######################################################
 echo "Install cask fonts"
 brew tap homebrew/cask-fonts
-brew cask install font-bebas-neue
+brew install --cask font-bebas-neue
 
 brew cleanup
