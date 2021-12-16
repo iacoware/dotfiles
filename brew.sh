@@ -91,12 +91,15 @@ brew install --cask google-drive-file-stream
 brew install --cask vlc
 brew install --cask fantastical
 brew install --cask rectangle
-brew install --cask zoomus
+brew install --cask zoom
 brew install --cask pop
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo
-xattr -d -r com.apple.quarantine ~/Library/QuickLook #Remove quarantine attributes on Catalina and later
+brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase
+
+# Not available on M1
+#brew install --cask qlvideo
+#xattr -d -r com.apple.quarantine ~/Library/QuickLook #Remove quarantine attributes on Catalina and later
 
 ######################################################
 echo "Install cask fonts"
