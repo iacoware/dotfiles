@@ -7,6 +7,9 @@ else
     . ~/z.sh        
 fi
 
+# hook brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # hook fnm
 eval "`fnm env`"
 
