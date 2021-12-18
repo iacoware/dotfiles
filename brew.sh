@@ -105,5 +105,8 @@ brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json webpquickloo
 echo "Install cask fonts"
 brew tap homebrew/cask-fonts
 brew install --cask font-bebas-neue
+brew install --cask font-fira-code
+brew install --cask font-jetbrains-mono
+
 
 brew cleanup
