@@ -5,6 +5,8 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 files=(
 	.zshrc .zsh_prompt
+	.aliases .functions .exports 
+	.hushlogin .path .extra.
 )
 
 for file in ${files[@]}; do
