@@ -6,7 +6,11 @@ Other things to install/rember that I've not (yet) automated:
     -   `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
     - disable directories aliases (rename lib/directories.zsh to lib/directories.not_zsh to avoid loading)
 - iterm tweaks
-    - theme
+    - theme (New Moon)
+    - On profile -> key mapping select "Natural Text Editing" preset (word-by-word movement)
+    - Open New Tab with Same Directory
+        - https://www.freecodecamp.org/news/jump-between-words-using-keyboard-shortcuts-in-iterm-fb1a70cecf79/
+    - Select text using shift + arrows
 
 ### macOS teaks    
 

@@ -6,9 +6,3 @@ else
     echo "currently on linux"
     . ~/z.sh        
 fi
-
-# hook fnm
-eval "`fnm env`"
-
-# hook direnv
-eval "$(direnv hook bash)"
