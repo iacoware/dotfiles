@@ -74,6 +74,7 @@ brew install --cask jetbrains-toolbox
 brew install --cask docker
 brew install --cask postman
 brew install --cask dotnet-sdk
+brew install --cask mongodb-compass
 
 # Browsers
 brew install --cask google-chrome
@@ -83,6 +84,7 @@ brew install --cask brave-browser
 brew install --cask tor-browser
 
 # Miscs
+brew install --cask raycast
 brew install --cask slack
 brew install --cask notion
 brew install --cask miro
