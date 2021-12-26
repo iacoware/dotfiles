@@ -63,6 +63,7 @@ brew install git-delta
 brew install broot
 brew install zoxide
 brew install tokei
+brew install grex
 
 ####################################################
 echo "installing cask apps"
