@@ -20,3 +20,7 @@ Other things to install/rember that I've not (yet) automated:
         - When switching to an app... : disabled
 
 
+
+### Shortcuts
+
+CMD+SHIFT+. Show/Hide hidden files in Finder
