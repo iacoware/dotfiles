@@ -87,6 +87,9 @@
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
 
+	# git-delta setup
+	pager = delta
+
 [color]
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
@@ -112,6 +115,9 @@
 	# Detect copies as well as renames
 	renames = copies
 
+	# git-delta setup
+	colorMoved = default
+
 [diff "bin"]
 	# Use `hexdump` to diff binary files
 	textconv = hexdump -v -C
@@ -119,6 +125,9 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+	# git-delta setup
+	conflictstyle = diff3
 
 [push]
 	default = simple
@@ -134,5 +143,14 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[interactive]
+	# git-delta setup
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+	side-by-side = true
+
 [icdiff]
 	options = --highlight
