@@ -107,3 +107,5 @@ eval "$(fnm env)"
 eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /Users/iacoware/.config/broot/launcher/bash/br

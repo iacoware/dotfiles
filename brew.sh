@@ -59,6 +59,8 @@ brew install awscli
 brew install direnv
 brew install cloc
 brew install lastpass-cli
+brew install git-delta
+brew install broot
 
 ####################################################
 echo "installing cask apps"
