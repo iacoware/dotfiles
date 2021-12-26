@@ -43,7 +43,9 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+# alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias cleanup="fd '^(node_modules|\.DS_Store|bin|obj)$' --no-ignore --hidden --prune"
+alias cleanup-exec="cleanup --exec rm -rf"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
