@@ -17,10 +17,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "iacpro"
-sudo scutil --set HostName "iacpro"
-sudo scutil --set LocalHostName "iacpro"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "iacpro"
+sudo scutil --set ComputerName "iacpro-22"
+sudo scutil --set HostName "iacpro-22"
+sudo scutil --set LocalHostName "iacpro-22"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "iacpro-22"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
