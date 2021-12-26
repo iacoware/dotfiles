@@ -62,6 +62,7 @@ brew install lastpass-cli
 brew install git-delta
 brew install broot
 brew install zoxide
+brew install tokei
 
 ####################################################
 echo "installing cask apps"
@@ -98,6 +99,7 @@ brew install --cask fantastical
 brew install --cask rectangle
 brew install --cask zoom
 brew install --cask pop
+brew install --cask stretchly
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase
