@@ -42,28 +42,30 @@ brew install gnu-sed
 brew install wget
 
 brew install tree
-brew install z
-brew install fzf
 brew install bat
 brew install fd
 brew install httpie
-brew install icdiff #remeber to set it up with git
 brew install p7zip
 brew install ncdu
 brew install git
 brew install git-lfs
 brew install ssh-copy-id
 brew install starship
-brew install fnm
 brew install awscli
 brew install direnv
 brew install cloc
 brew install lastpass-cli
-brew install git-delta
+brew install grex
+brew install tokei
+
+# Setup step needed for all of this. 
+# Refer to their github repo for info.
+brew install fzf
+brew install fnm
+brew install icdiff
+brew install git-delta # alternative to icdiff
 brew install broot
 brew install zoxide
-brew install tokei
-brew install grex
 
 ####################################################
 echo "installing cask apps"
