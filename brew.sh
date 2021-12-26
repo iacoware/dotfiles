@@ -61,6 +61,7 @@ brew install cloc
 brew install lastpass-cli
 brew install git-delta
 brew install broot
+brew install zoxide
 
 ####################################################
 echo "installing cask apps"

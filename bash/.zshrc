@@ -109,3 +109,5 @@ eval "$(direnv hook zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /Users/iacoware/.config/broot/launcher/bash/br
+
+eval "$(zoxide init zsh --cmd cd)"
