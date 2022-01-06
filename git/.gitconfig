@@ -28,7 +28,7 @@
 	unstage = reset HEAD --
 
 	# undo last commit(s) and keep changes, with files unstaged
-    uncommit = reset HEAD^ --mixed
+	uncommit = reset HEAD^ --mixed
 	
 	# Add all changes
 	aa = add -A
@@ -153,4 +153,4 @@
 	side-by-side = true
 
 [icdiff]
-	options = --highlight
+	options = --highlight --line-numbers
