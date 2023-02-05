@@ -111,3 +111,10 @@ eval "$(direnv hook zsh)"
 source /Users/iacoware/.config/broot/launcher/bash/br
 
 eval "$(zoxide init zsh --cmd cd)"
+
+# bun completions
+[ -s "/Users/iacoware/.bun/_bun" ] && source "/Users/iacoware/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/iacoware/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

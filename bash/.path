@@ -1,5 +1,8 @@
 # fix brew doctor warning
 export PATH="/usr/local/sbin:$PATH";
 
+# jetbrains IDE executables
+export PATH="$PATH:/Users/iacoware/bin/";
+
 # Put .node_modules/bin in path. Less need to rely on global modules
 export PATH="$PATH:./node_modules/.bin";
