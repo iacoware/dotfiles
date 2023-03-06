@@ -36,6 +36,9 @@
 	# undo last commit(s) and keep changes, with files unstaged
 	uncommit = reset HEAD^ --mixed
 	
+	# rewrite history from root in interactive mode (only for demo/training repos)
+	rewrite = rebase -i --root
+
 	# Add all changes
 	aa = add -A
 
