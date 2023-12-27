@@ -73,6 +73,7 @@ alias dk=docker
 alias dkc=docker-compose
 
 alias unzip="7z x"
+alias zip="7z a -r"
 
 # Count lines of code
 alias sloc="sloc -e 'node_modules|\.git\b|\bbin\b|\bobj\b|\bdist\b|\.cache\b'"
