@@ -1,0 +1,8 @@
+############## Misc
+if [ "$(uname)" == "Darwin" ]; then
+    echo "currently on mac"
+    . `brew --prefix`/etc/profile.d/z.sh	#setup z
+else
+    echo "currently on linux"
+    . ~/z.sh        
+fi

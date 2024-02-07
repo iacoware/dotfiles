@@ -16,6 +16,6 @@ A collection of dotfiles that suits my needs. Stolen from:
 6. setup shell
 
     1. install `oh-my-zsh` with `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-    2. `./bash/setup_zsh.sh`
+    2. `./zsh/setup_zsh.sh`
 
 7. `./git/setup.sh`
