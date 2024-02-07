@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting yarn)
+plugins=(yarn)
 
 # Skip only aliases defined in the directories.zsh lib file
 zstyle ':omz:lib:directories' aliases no
@@ -116,11 +116,17 @@ eval "$(fnm env)"
 eval "$(direnv hook zsh)"
 eval "$(atuin init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# switched to atuin for history
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /Users/iacoware/.config/broot/launcher/bash/br
 
 eval "$(zoxide init zsh --cmd cd)"
+
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # bun completions
 # [ -s "/Users/iacoware/.bun/_bun" ] && source "/Users/iacoware/.bun/_bun"

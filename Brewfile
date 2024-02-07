@@ -23,6 +23,12 @@ brew "cloc"         # count line-of-code
 brew "tokei"        # count line-of-code
 brew "mas"          # Mac AppStore cli for automation
 
+# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+brew "zsh-syntax-highlighting"
+
+# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+brew "zsh-autosuggestions"
+
 # Setup step needed for all of this. 
 # Refer to their github repo for info.
 brew "fzf"          # fuzzy find. I use it mainly for history search
