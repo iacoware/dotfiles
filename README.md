@@ -10,7 +10,8 @@ A collection of dotfiles that suits my needs. Stolen from:
 
 1. `xcode-select --install`
 2. `git clone https://github.com/iacoware/dotfiles.git`
-3. `brew.sh`
-4. `osx.sh`
+3. `install brew`, see https://brew.sh 
+3. `source brew.sh`
+4. `source macos.sh`
 5. run the setup for bash, fish or zsh
-6. `/git/setup.sh`
+6. `source /git/setup.sh`

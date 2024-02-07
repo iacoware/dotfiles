@@ -48,7 +48,7 @@ cask "firefox"
 cask "tor-browser"
 
 # Miscs
-cask "raycast"
+# cask "raycast"    # already installed
 cask "slack"
 cask "notion"
 cask "miro"
@@ -65,4 +65,4 @@ cask "font-jetbrains-mono"
 
 
 # AppStore apps
-mas "Bitwarden", id:1352778147
+# mas "Bitwarden", id:1352778147 #already installed through AppStore
