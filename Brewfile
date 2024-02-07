@@ -64,6 +64,7 @@ cask "google-drive"
 cask "vlc"
 cask "zoom"
 cask "pop"
+cask "around"
 
 # Fonts
 cask "font-bebas-neue"
