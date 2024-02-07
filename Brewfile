@@ -30,6 +30,7 @@ brew "fnm"          # fast node version switcher
 brew "git-delta"    # file diff in a terminal
 brew "broot"        # visual folder navigation in a tree-like UI
 brew "zoxide"       # auto cd into folders by partial match 
+brew "atuin"        # shell history (alternative to fzf)
 
 # Development tool casks
 cask "iterm2"

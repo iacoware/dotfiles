@@ -4,6 +4,7 @@ Other things to install/rember that I've not (yet) automated:
 -   Install the `toggl cli` that enable logging hours within Toggl (Python app)
 
 -   iterm tweaks
+
     -   theme (Smooooth)
     -   Profiles -> Default
         -   General: select reuse previous session's directory
@@ -20,6 +21,15 @@ Other things to install/rember that I've not (yet) automated:
     -   On profile -> key mapping select "Natural Text Editing" preset (word-by-word movement)
     -   Select text using shift + arrows
         -   Not possibile. CMD+SHIFT+C enter copy mode -> SPACE BAR start copy + move as usual
+
+-   atuin (shell history)
+    -   See https://github.com/atuinsh/atuin?tab=readme-ov-file#install
+    -   In short
+        -   ```
+            atuin register -u <USERNAME> -e <EMAIL>
+            atuin import auto
+            atuin sync
+            ```
 
 ### macOS teaks
 
