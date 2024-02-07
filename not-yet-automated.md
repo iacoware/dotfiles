@@ -20,6 +20,18 @@ Other things to install/rember that I've not (yet) automated:
         - When switching to an app... : disabled
 
 
+### Webstorm
+
+#### Keymaps
+- Clone caret below
+- Refactor this
+
+#### Templates
+- vitest, jest import
+- tt
+- Effect imports
+
+
 
 ### Shortcuts
 

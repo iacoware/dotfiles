@@ -1,5 +1,9 @@
 # hook brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ "$(arch)" = arm64 ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 ## Use gnu tools instead (coreutils)
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
