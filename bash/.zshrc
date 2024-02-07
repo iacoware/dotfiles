@@ -74,6 +74,15 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-syntax-highlighting yarn)
 
+# Skip only aliases defined in the directories.zsh lib file
+zstyle ':omz:lib:directories' aliases no
+
+# Skip only the aliases from the git plugin
+zstyle ':omz:plugins:git' aliases no
+
+# Skip only the aliases from the yarn plugin
+zstyle ':omz:plugins:yarn' aliases no
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
