@@ -39,11 +39,16 @@ brew install findutils
 brew install gnu-sed
 
 # "developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins"
-brew install "qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package apparency quicklookase"
+brew install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package apparency quicklookase
 
 # Not available on M1
 #brew "--cask qlvideo"
-#xattr -d -r com.apple.quarantine ~/Library/QuickLook #Remove quarantine attributes on Catalina and later
+
+# Remove quarantine attributes
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
+
+# To verify quantine attributes were removed from Quicklook
+# xattr -r ~/Library/QuickLook
 
 brew bundle --file=~/dotfiles/Brewfile
 
