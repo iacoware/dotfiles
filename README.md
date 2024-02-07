@@ -10,8 +10,12 @@ A collection of dotfiles that suits my needs. Stolen from:
 
 1. `xcode-select --install`
 2. `git clone https://github.com/iacoware/dotfiles.git`
-3. `install brew`, see https://brew.sh 
-3. `source brew.sh`
-4. `source macos.sh`
-5. run the setup for bash, fish or zsh
-6. `source /git/setup.sh`
+3. `install brew`, see https://brew.sh
+4. `./brew.sh`
+5. `./macos.sh`
+6. setup shell
+
+    1. install `oh-my-zsh` with `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+    2. `./bash/setup_zsh.sh`
+
+7. `./git/setup.sh`
