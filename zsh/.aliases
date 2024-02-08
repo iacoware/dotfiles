@@ -92,3 +92,12 @@ alias cloc="cloc --exclude-dir=node_modules,.git,.cache,dist,bin,obj,.vscode,.id
 # AWS profile switching
 alias awsp="source _awsp"
 alias aws-profile='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'
+
+# git
+alias gs="git s"
+alias gl="git l"
+alias gds="git ds"
+alias gaa="git aa"
+alias gcm="git cm"
+alias gca="git ca"
+alias gcam="git camend"
