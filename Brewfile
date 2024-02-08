@@ -58,6 +58,7 @@ cask "tor-browser"
 # cask "raycast"    # already installed
 cask "slack"
 cask "notion"
+cask "notion-calendar"
 cask "miro"
 cask "dropbox"
 cask "google-drive"

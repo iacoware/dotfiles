@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 eval "$(fnm env)"
 eval "$(direnv hook zsh)"
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 
 

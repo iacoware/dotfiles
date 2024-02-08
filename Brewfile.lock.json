@@ -1380,6 +1380,12 @@
         "options": {
           "full_name": "around"
         }
+      },
+      "notion-calendar": {
+        "version": "1.118.0,2402013gyoac4ma",
+        "options": {
+          "full_name": "notion-calendar"
+        }
       }
     }
   },
