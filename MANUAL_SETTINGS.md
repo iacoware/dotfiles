@@ -37,6 +37,13 @@ Other things to install/rember that I've not (yet) automated:
         atuin sync
         ```
 
+### npm
+
+-   `npm set fund false` no brainer
+-   `npm set audit false` not sure it's the right thing to do
+-   `export DISABLE_OPENCOLLECTIVE=1` not sure what id does
+-   `export ADBLOCK=1` no brainer
+
 ### macOS teaks
 
 -   System Preferences
@@ -47,6 +54,10 @@ Other things to install/rember that I've not (yet) automated:
 ### Webstorm
 
 -   Preferences -> Settings Sync -> turn on 'Enable settings sync'
+
+### VSCode
+
+-   Command bar -> Settings Sync -> Configure
 
 ### Shortcuts
 

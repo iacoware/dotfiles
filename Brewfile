@@ -1,4 +1,3 @@
-
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
@@ -66,6 +65,8 @@ cask "vlc"
 cask "zoom"
 cask "pop"
 cask "around"
+cask "stay"         # Useful in a multi-monitor setting. You can save and load window placement. 
+                    # It's vital when the monitors are slow to wake up and macOS doesn't do right thing (paid software)
 
 # Fonts
 cask "font-bebas-neue"
