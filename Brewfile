@@ -18,6 +18,7 @@ brew "ssh-copy-id"
 brew "starship"
 brew "awscli"
 brew "direnv"
+brew "eza"          # like ls but easier to configure
 brew "cloc"         # count line-of-code
 brew "tokei"        # count line-of-code
 brew "mas"          # Mac AppStore cli for automation

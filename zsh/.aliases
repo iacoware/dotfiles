@@ -2,10 +2,13 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias -- -="cd -"
+alias -- --="cd -1"
+
+alias c="clear"
 
 # Shortcuts
-alias downloads="cd ~/Downloads"
-alias desktop="cd ~/Desktop"
+alias down="cd ~/Downloads"
+alias desk="cd ~/Desktop"
 alias p="cd ~/projects"
 
 # Detect which `ls` flavor is in use
@@ -16,7 +19,13 @@ else # OS X `ls`
 fi
 
 # List all files colorized in long format, including dot files
-alias ll="ls -lahF ${colorflag} --group-directories-first"
+alias ll="ls -lahFgX ${colorflag} --group-directories-first --time-style='+%d %b %H:%M'"
+alias l="ls --size -1SAXhF --color --group-directories-first"
+
+
+# Using eza instead of ls
+alias ell="eza -AlF --group-directories-first --total-size --no-user --no-quotes --sort=type --no-permissions"
+alias lh="eza -dl .* --group-directories-first --no-user --no-permissions"	# only hidden files
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
@@ -62,6 +71,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+alias realod="exec $SHELL -l"
 
 #suspend sleep
 alias suspendsleep="sudo systemsetup -setcomputersleep Off"
