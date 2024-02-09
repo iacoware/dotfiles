@@ -121,7 +121,7 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 
 # switched to atuin for history
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /Users/iacoware/.config/broot/launcher/bash/br
 

@@ -24,8 +24,9 @@ alias l="ls --size -1SAXhF --color --group-directories-first"
 
 
 # Using eza instead of ls
-alias ell="eza -AlF --group-directories-first --total-size --no-user --no-quotes --sort=type --no-permissions"
+alias ell="eza -AlF --group-directories-first --no-user --no-quotes --sort=type --no-permissions"
 alias lh="eza -dl .* --group-directories-first --no-user --no-permissions"	# only hidden files
+alias ld="eza -lADh --no-user --no-permissions"	# only directories
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
