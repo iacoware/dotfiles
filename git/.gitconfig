@@ -1,167 +1,181 @@
 [user]
-	email = info@massimoiacolare.it
-	name = Massimo Iacolare
+    email = info@massimoiacolare.it
+    name = Massimo Iacolare
 
 [alias]
 
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	#l = log --pretty=oneline -n 20 --graph --abbrev-commit
-	l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --graph -n 20
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
-	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=format:'%a %d/%m %H:%M'
-	ldr = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
+    #l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --graph -n 20
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=format:'%a %d/%m %H:%M'
+    ldr = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
 
-	# show a tree with all branches
+    # show a tree with all branches
     hist = !git log --graph --decorate --all --oneline --color
 
-	# View the current working tree status using the short format
-	s = status -s
+    # View the current working tree status using the short format
+    s = status -s
 
-	# View just merge conflicts
-	sc = diff --name-only --diff-filter=U
+    # View just merge conflicts
+    sc = diff --name-only --diff-filter=U
 
-	# Diff on the same line, ignore whitespaces, remove file prefix
-	dd = diff --word-diff --no-prefix -w
+    # Diff on the same line, ignore whitespaces, remove file prefix
+    dd = diff --word-diff --no-prefix -w
 
-	# Diff side-by-side thanks to delta
-	d = diff
+    # Diff side-by-side thanks to delta
+    d = diff
 
-	# Diff side-by-side thanks to delta
-	ds = -c delta.side-by-side=true diff
+    # Diff side by side provided by difftastic
+    df = difftool
 
-	# unstage staged files (or pass a filename)
-	unstage = reset HEAD --
+    # Diff side-by-side thanks to delta
+    ds = -c delta.side-by-side=true diff
 
-	# undo last commit(s) and keep changes, with files unstaged
-	uncommit = reset HEAD^ --mixed
-	
-	# rewrite history from root in interactive mode (only for demo/training repos)
-	rewrite = rebase -i --root
+    # unstage staged files (or pass a filename)
+    unstage = reset HEAD --
 
-	# Add all changes
-	aa = add -A
+    # undo last commit(s) and keep changes, with files unstaged
+    uncommit = reset HEAD^ --mixed
+    
+    # rewrite history from root in interactive mode (only for demo/training repos)
+    rewrite = rebase -i --root
 
-	# Commit with message "..."
-	cm = commit -m 
+    # Add all changes
+    aa = add -A
 
-	# Commit all changes
-	ca = !git add -A && git commit -avm
+    # Commit with message "..."
+    cm = commit -m 
 
-	# Commit all changes
-	amend = commit --amend
-	camend = commit --amend --no-edit
+    # Commit all changes
+    ca = !git add -A && git commit -avm
 
-	# Switch to a branch, creating it if necessary
-	co = checkout
+    # Commit all changes
+    amend = commit --amend
+    camend = commit --amend --no-edit
 
-	# global git config
-	ec = config --global -e		# edit
-	lc = config --global -l		# list
+    # Switch to a branch, creating it if necessary
+    co = checkout
 
-	# Show verbose output about tags, branches or remotes
-	tags = tag -l
-	branches = branch -a
-	remotes = remote -v
+    # global git config
+    ec = config --global -e        # edit
+    lc = config --global -l        # list
 
-	# List aliases
-	aliases = config --get-regexp alias
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
 
-	# List contributors with number of commits
-	contributors = shortlog --summary --numbered
+    # List aliases
+    aliases = config --get-regexp alias
 
-	# Pull rebase
-	pl = pull --rebase
-	pr = pull --rebase
+    # List contributors with number of commits
+    contributors = shortlog --summary --numbered
+
+    # Pull rebase
+    pl = pull --rebase
+    pr = pull --rebase
 
 [apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
 
 [core]
-	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
+    # Use custom `.gitignore` and `.gitattributes`
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
 
-	# Treat spaces before tabs and all kinds of trailing whitespace as an error
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
-	# Make `git rebase` safer on OS X
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
+    # Make `git rebase` safer on OS X
+    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+    trustctime = false
 
-	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
-	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-	precomposeunicode = false
+    # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+    # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+    precomposeunicode = false
 
-	# git-delta setup
-	pager = delta
+    # git-delta setup
+    pager = delta
 
 [color]
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
+    # Use colors in Git commands that are capable of colored output when
+    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+    ui = auto
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 
 [color "diff"]
-	meta = cyan bold reverse
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+    meta = cyan bold reverse
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
 
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 
 [diff]
-	# Detect copies as well as renames
-	renames = copies
+    # Detect copies as well as renames
+    renames = copies
 
-	# git-delta setup
-	colorMoved = default
+    # git-delta setup
+    colorMoved = default
+
+    tool = difftastic
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
 
 [diff "bin"]
-	# Use `hexdump` to diff binary files
-	textconv = hexdump -v -C
+    # Use `hexdump` to diff binary files
+    textconv = hexdump -v -C
 
 [merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
 
-	# git-delta setup
-	conflictstyle = diff3
+    # git-delta setup
+    conflictstyle = diff3
 
 [push]
-	default = simple
-	
-	# Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
+    default = simple
+    
+    # Make `git push` push relevant annotated tags when pushing branches out.
+    followTags = true
 
 [rerere]
-	enabled = true
+    enabled = true
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [interactive]
-	# git-delta setup
+    # git-delta setup
     diffFilter = delta --color-only
 
 [delta]
     navigate = true
-	#side-by-side = true
+    #side-by-side = true
 
 [icdiff]
-	options = --highlight --line-numbers
+    options = --highlight --line-numbers
 [init]
-	defaultBranch = main
+    defaultBranch = main

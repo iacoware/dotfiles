@@ -34,6 +34,7 @@ brew "zsh-autosuggestions"
 brew "fzf"          # fuzzy find. I use it mainly for history search
 brew "fnm"          # fast node version switcher
 brew "git-delta"    # file diff in a terminal
+brew "difftastic"   # file diff in a terminal based on AST instead of word diffing
 brew "broot"        # visual folder navigation in a tree-like UI
 brew "zoxide"       # auto cd into folders by partial match 
 brew "atuin"        # shell history (alternative to fzf)

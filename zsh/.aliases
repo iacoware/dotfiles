@@ -98,6 +98,7 @@ alias aws-profile='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ~/.a
 alias gs="git s"
 alias gl="git l"
 alias gds="git ds"
+alias gdf="git df"
 alias gaa="git aa"
 alias gcm="git cm"
 alias gca="git ca"
