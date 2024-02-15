@@ -50,6 +50,10 @@ Other things to install/rember that I've not (yet) automated:
     -   Mission control
         -   Display have separate spaces: disabled
         -   When switching to an app... : disabled
+    -   Keyboard shortcuts
+        -   Remove all which are in conflict with Jetbrains IDE
+            -   CMD+SHIFT+A
+            -   Alot more... check IDE
 
 ### Webstorm
 
