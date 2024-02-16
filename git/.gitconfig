@@ -54,6 +54,9 @@
     # Commit all changes
     amend = commit --amend
     camend = commit --amend --no-edit
+    cam = commit --amend
+    came = commit --amend --no-edit
+    cane = commit --amend --no-edit
 
     # Switch to a branch, creating it if necessary
     co = checkout
