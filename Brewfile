@@ -18,6 +18,7 @@ brew "ssh-copy-id"
 brew "starship"
 brew "awscli"
 brew "direnv"
+brew "gh"
 brew "eza"          # like ls but easier to configure
 brew "cloc"         # count line-of-code
 brew "tokei"        # count line-of-code
@@ -57,6 +58,7 @@ cask "tor-browser"
 
 # Miscs
 # cask "raycast"    # already installed
+cask "obsidian"
 cask "slack"
 cask "notion"
 cask "notion-calendar"

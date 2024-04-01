@@ -133,16 +133,29 @@
     # git-delta setup
     colorMoved = default
 
+    # difftastic setup
     tool = difftastic
 
 [difftool]
+    # difftastic setup
     prompt = false
 
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE"
 
 [pager]
+    # difftastic setup
     difftool = true
+
+[interactive]
+    # git-delta setup
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+
+[icdiff]
+    options = --highlight --line-numbers
 
 [diff "bin"]
     # Use `hexdump` to diff binary files
@@ -170,15 +183,5 @@
     process = git-lfs filter-process
     required = true
 
-[interactive]
-    # git-delta setup
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true
-    #side-by-side = true
-
-[icdiff]
-    options = --highlight --line-numbers
 [init]
     defaultBranch = main
