@@ -50,6 +50,7 @@ cask "docker"
 cask "postman"
 cask "dotnet-sdk"
 cask "mongodb-compass"
+cask "ngrok"
 
 # Browsers
 cask "google-chrome"
