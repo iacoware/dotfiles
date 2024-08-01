@@ -95,6 +95,7 @@ alias awsp="source _awsp"
 alias aws-profile='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'
 
 # git
+alias g="git"
 alias gs="git s"
 alias gl="git l"
 alias gds="git ds"
@@ -108,3 +109,7 @@ alias gcane="git cane"
 alias gpr="git pr"
 alias gph="git push"
 alias gco="git co"
+
+# yarn
+alias y="yarn"
+alias yw="yarn workspace"

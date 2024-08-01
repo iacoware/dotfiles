@@ -80,6 +80,8 @@
     pl = pull --rebase
     pr = pull --rebase
 
+    ph = push
+
 [apply]
     # Detect whitespace errors when applying a patch
     whitespace = fix
