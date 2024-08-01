@@ -59,6 +59,7 @@ cask "tor-browser"
 
 # Miscs
 # cask "raycast"    # already installed
+cask "roam-research"
 cask "obsidian"
 cask "slack"
 cask "notion"
