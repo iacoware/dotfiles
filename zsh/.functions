@@ -47,3 +47,8 @@ function dkrm()	{
 function dkrmi() { 
 	docker rmi $(docker images -q -f "dangling=true") 
 }
+
+# List all open ports and related processes
+function openports() {
+	sudo lsof -iTCP -sTCP:LISTEN -n -P | awk 'NR>1 {print $9, $1, $2}' | sed 's/.*://' | sort -n | while read port process pid; do echo "Port $port: $(ps -p $pid -o command= | sed 's/^-//') (PID: $pid)"; done
+}

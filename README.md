@@ -19,3 +19,7 @@ A collection of dotfiles that suits my needs. Stolen from:
     2. `./zsh/setup_zsh.sh`
 
 7. `./git/setup.sh`
+
+## Brew
+
+-   To update the dependencies installed (only binaries and fonts, not casks) run `brew bundle`
