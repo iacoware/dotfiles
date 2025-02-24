@@ -71,6 +71,7 @@ cask "vlc"
 cask "zoom"
 cask "pop"
 cask "around"
+cask "microsoft-teams"
 cask "stay"         # Useful in a multi-monitor setting. You can save and load window placement. 
                     # It's vital when the monitors are slow to wake up and macOS doesn't do right thing (paid software)
 

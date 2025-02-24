@@ -113,3 +113,7 @@ alias gco="git co"
 # yarn
 alias y="yarn"
 alias yw="yarn workspace"
+
+# pnpm
+alias pn="pnpm"
+alias pnw="pnpm --recursive"
