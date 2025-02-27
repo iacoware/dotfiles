@@ -116,4 +116,5 @@ alias yw="yarn workspace"
 
 # pnpm
 alias pn="pnpm"
+alias pnr="pnpm run"
 alias pnw="pnpm --recursive"
