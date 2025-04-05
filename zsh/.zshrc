@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(yarn)
+plugins=(yarn pnpm-shell-completion)
 
 # Skip only aliases defined in the directories.zsh lib file
 zstyle ':omz:lib:directories' aliases no
